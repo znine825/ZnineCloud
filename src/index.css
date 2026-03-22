@@ -9,10 +9,16 @@ body, #root {
     font-family: 'A2z';
 
     background-color: #0A0A0A;
-    scrollbar-width: none;      /* Firefox */
-    -ms-overflow-style: none;   /* IE, Edge 구버전 */
 }
 
+html, body {
+  -ms-overflow-style: none;  /* IE, Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none;             /* Chrome */
+}
 a {
     text-decoration: none;
 }

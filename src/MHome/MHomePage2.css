@@ -26,41 +26,47 @@
     color: #6D6D6D;
 }
 .MH2_GuideLine {
-    position: absolute;
+    position: relative;
     left: 50%;
     transform: translate(-50%, 0);
+
+    margin-top: 30px;
+    margin-bottom: 30px;
 
     width: calc(80vw);
     height: 1px;
 
     background-color: #6D6D6D50;
 }
-.GL1 {
-    top: calc(100vh + 150px);
-}
-.GL2 {
-    top: calc(100vh + 290px);
-}
-.GL3 {
-    top: calc(100vh + 430px);
-}
-.GL4 {
-    top: calc(100vh + 570px);
-}
 .PS_Main {
+    position: relative;
     height: 60px;
     width: auto;
     display: flex;
     align-items: center;;
+
+    transition: height 0.5s ease;
 }
 
+.PS_Main:hover {
+    height: 100px;
+}
+.PS_Main:hover > div > p {
+    opacity: 1;
+    height: 17px;
+}
+.PS_Main > div > div {
+    height: 48px;
+    display: flex;
+}
 .PS_Num {
     font-size: 14px;
     font-weight: 300;
     color: #6D6D6D;
 }
+
 .PS_Title {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 600;
 
     margin-left: 40px;
@@ -69,22 +75,30 @@
     color: #D9D9D9;
 }
 .PS_SubTitle {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+    height: 17px;
     font-size: 14px;
     font-weight: 300;
     color: #6D6D6D;
 }
-.PS_1 {
-    position: absolute;
-    left: 10vw;
-    top: calc(100vh + 190px);
+.PS_Text {
+    position: relative;
+    top: 10px;
+    height: 0px;
+    left: 40px;
+
+    font-size: 14px;
+    font-weight: 200;
+
+    color: #6D6D6D;
+
+    opacity: 0;
+    transition: opacity 0.5s ease, height 0.5s ease;
 }
-.PS_2 {
+.MH_Services {
     position: absolute;
+    top: 110px;
     left: 10vw;
-    top: calc(100vh + 330px);
-}
-.PS_3 {
-    position: absolute;
-    left: 10vw;
-    top: calc(100vh + 470px);
 }
