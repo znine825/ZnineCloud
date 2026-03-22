@@ -1,0 +1,10 @@
+.ME_header {
+    position: fixed;
+    top: 0px;
+    left: 50%;
+
+    transform: translate(-50%, 0);
+}
+.ME_Background {
+    position: absolute;
+}
