@@ -1,4 +1,4 @@
-name: Deploy React App
+name: Deploy React
 
 on:
   push:
@@ -10,31 +10,24 @@ permissions:
   id-token: write
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 코드 가져오기
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Node 설치
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: 'npm'
 
-      - name: 패키지 설치
-        run: npm install
+      - run: npm install
+      - run: npm run build
 
-      - name: 빌드
-        run: npm run build
+      - uses: actions/configure-pages@v4
 
-      - name: Pages 설정
-        uses: actions/configure-pages@v4
-
-      - name: 빌드 파일 업로드
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
-      - name: 배포
-        uses: actions/deploy-pages@v4
+      - uses: actions/deploy-pages@v4
