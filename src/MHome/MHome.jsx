@@ -2,6 +2,8 @@ import './MHome.css'
 import './MHomePage2.css'
 import './MHomePage3.css'
 import Header from './../Components/Header/Header.jsx'
+import Footer from './../Components/Footer/Footer.jsx'
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 function Page2_Service(props) {
@@ -22,6 +24,33 @@ function Page2_Service(props) {
 
 
 function MHome() {
+
+    const cursorRef = useRef();
+
+    useEffect(() => {
+        const move = (e) => {
+        cursorRef.current.style.top = e.clientY + "px";
+        cursorRef.current.style.left = e.clientX + "px";
+        };
+
+        const show = () => {
+        cursorRef.current.style.opacity = "1";
+        };
+
+        const hide = () => {
+        cursorRef.current.style.opacity = "0";
+        };
+
+        window.addEventListener("mousemove", move);
+        document.addEventListener("mouseenter", show);
+        document.addEventListener("mouseleave", hide);
+
+        return () => {
+        window.removeEventListener("mousemove", move);
+        document.removeEventListener("mouseenter", show);
+        document.removeEventListener("mouseleave", hide);
+        };
+    }, []);
 
     return (
         <div className = 'MHome'>
@@ -79,9 +108,22 @@ function MHome() {
             {/* ====================PAGE 3================== */}
 
             <div className = 'MH3_Page3'>
-
+                <p className = 'MH3_BackText'>ZNINE</p>
+                <div className = 'MH3_Title'>
+                    <p>여러분들의 작은 도움 하나가</p>
+                    <p>저에게 큰 힘이 됩니다</p>
+                </div>
+                <p className = 'MH3_SubTitle'>I NEED HELP</p>
+                <div className ='MH3_Donate'>
+                    <p>GO TO DONATE</p>
+                </div>
             </div>
-            
+
+            <div class="cursor" ref = {cursorRef}>
+                <div></div>
+            </div>
+
+            <div className = 'MH_Footer'><Footer/></div>
         </div>
     )
 }

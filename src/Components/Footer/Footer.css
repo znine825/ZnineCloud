@@ -1,0 +1,63 @@
+.FT_Main {
+    height: 90px;
+    width: 1500px;
+
+    border-top: 1px solid #1A1A1A;
+    display: flex;
+}
+.FT_LOGO {
+    position: absolute;
+    left: none;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    height: 30px;
+
+    display: flex;
+}
+.FT_LOGO > p:nth-child(1) {
+    font-size: 25px;
+    font-weight: 700;
+    font-family: 'Inter';
+
+    color: #D9D9D9;
+}
+.FT_LOGO > p:nth-child(2) {
+    position: relative;
+    top: 6px;
+
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Inter';
+
+    color: #505050;
+}
+.FT_Link {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    display: flex;
+}
+.FT_Link > p {
+    font-size: 12px;
+    font-weight: 300;
+    font-family: 'Inter';
+
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    color: #6D6D6D;
+}
+.FT_CopyRights {
+    position: relative;
+
+    font-size: 12px;
+    font-weight: 300;
+    font-family: 'Inter';
+
+    margin-top: 10px;
+    margin-left: auto;
+
+    color: #6D6D6D;
+}
