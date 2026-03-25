@@ -7,7 +7,6 @@ function MTools() {
     return (
         <div>
             <div className = 'MT_header'><Header where = {3} /></div>
-            <Background className = 'MT_Background'/>
         </div>
     )
 }

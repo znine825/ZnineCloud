@@ -7,7 +7,6 @@ function MDocs() {
     return (
         <div>
             <div className = 'MD_header'><Header where = {4} /></div>
-            <Background className = 'MD_Background'/>
         </div>
     )
 }

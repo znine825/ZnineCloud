@@ -1,0 +1,146 @@
+.MH_Back {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+}
+.MH_BackLine {
+    width: 1px;
+    height: 100vh;
+
+    margin: 0px;
+    margin-left: 140px;
+    margin-right: 140px;
+    background: linear-gradient(180deg, #00000000 10%, #1A1A1A 40%, #1A1A1A 60%, #00000000 90%);
+}
+
+
+
+
+
+.LF_Bottom {
+    top: calc(100vh - 220px);
+    transform: rotate(-180deg);
+}
+.MH_ZNINELOGO{
+    position: absolute;
+    width: 855px;
+    left: 50%;
+    top: 20vh;
+    transform: translate(-50%, -50%);
+}
+.ZL_Text {
+    position: absolute;
+    margin: 0px;
+
+    font-family: 'Inter';
+    font-size: 270px;
+    font-weight: 800;
+}
+.MH_F {
+    color: #D9D9D9;
+}
+.MH_Trick {
+    position: absolute;
+    height: 200px;
+    width: 400px;
+
+    top: 63px;
+    left: 50%;
+    background-color: #050505;
+}
+.MH_B {
+    color: #00000000;
+    -webkit-text-stroke: 1px #D9D9D9;
+}
+.MH_Subtitle {
+    position: absolute;
+
+    height: 15px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    top: 20vh;
+
+    display: flex;
+}
+.MH_SubText {
+    margin: 0px;
+    white-space: nowrap;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+
+    letter-spacing: 0.2em;
+
+    color: #6D6D6D;
+}
+.MH_L, .MH_R {
+    position: relative;
+    top: 50%;
+    transform: translate(0%, -50%);
+    width: 40px;
+    height: 1px;
+
+    background-color: #6D6D6D;
+}
+.MH_L {
+    margin-right: 15px;
+}
+.MH_R {
+    margin-left: 15px;
+}
+.MH_BottomTitle {
+    position: absolute;
+    top: calc(20vh + 320px - 15px);
+    left: 50%;
+    transform: translate(-50%, 0%);
+
+    display: flex;
+    gap: 52px;
+}
+.MH_BottomTitle > div {
+    color: #6D6D6D;
+    text-align: right;
+
+    font-size: 14px;
+    font-family: 'Inter';
+
+    font-weight: 300;
+}
+.MH_BottomButton {
+    position: absolute;
+    top: calc(20vh + 320px + 40px);
+    left: 50%;
+    transform: translate(-50%, 0%);
+
+    display: flex;
+    gap: 52px;
+}
+.MH_BottomButton > a > div {
+    width: 150px;
+    height: 30px;
+
+    font-size: 10px;
+    font-family: 'Inter';
+
+}
+.MH_BottomButton > a > div > p {
+    position: relative;
+    top: 50%;
+    text-align: center;
+    transform: translate(0, -50%)
+}
+.MH_BottomButton > a:nth-child(1) > div {
+    background-color: #D9D9D9;
+}
+.MH_BottomButton > a:nth-child(2) > div {
+    border: 1px solid #D9D9D9;
+}
+.MH_BottomButton > a:nth-child(1) > div > p {
+    color: #0a0a0a;
+}
+.MH_BottomButton > a:nth-child(2) > div > p {
+    color: #D9D9D9;
+}

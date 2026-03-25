@@ -11,7 +11,6 @@ function MLearn() {
     return (
         <div>
             <div className = 'ML_header'><Header where = {1} /></div>
-            <Background className = 'ML_Background'/>
             <p className = 'ML_header_text1'>Lectures</p>
             <p className = 'ML_header_text2'>{ header_test1 }</p>
             <p className = 'ML_header_text3'>{ header_test2 }</p>
