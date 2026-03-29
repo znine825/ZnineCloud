@@ -5,23 +5,21 @@ import { Sphere, Circle, Ring, Torus, OrbitControls, Tube, Edges, DragControls }
 import * as THREE from 'three';
 import { AxesHelper } from "three";
 
-function MakeLing(args) {
+function DivRing({x, y, z, r}) {
     return (
-        <Ring 
-            args = {[args.radius - args.thickness, args.radius, 100]} 
-            position = {[args.x, args.y, args.z]}
-            rotation = {[args.rotate[0], args.rotate[1], args.rotate[2]]}
-            >
-            <meshBasicMaterial
-                transparent
-                color = "white"
-                side = {THREE.DoubleSide}
-                opacity = {args.opa}/>
-        </Ring>
+        <mesh position = {[x, y + 0.25, z]} rotation = {[0, Math.PI / r, 0]}>
+            <boxGeometry args={[1, 1, 0.1]} />
+            <meshBasicMaterial color = "#050505" />
+            <Edges
+                scale = {1.00}
+                threshold = {15}
+                color = "rgb(214, 214, 214)"
+            />
+        </mesh>
     )
 }
 
-function M1Ring({x, y, z, text}) {
+function M1Ring({x, y, z}) {
 
     const path = new THREE.CatmullRomCurve3([
         new THREE.Vector3(0, 0.5, 0),
@@ -29,43 +27,13 @@ function M1Ring({x, y, z, text}) {
     ])
 
 
-
     return (
-            <mesh 
-                position={[x, y, z]}
+            <mesh position={[x, y, z]} >
+                <DivRing x = {-5} y ={0} z = {0} r = {1}/>
+                <DivRing x = {5} y ={0} z = {0} r = {1}/>
+                <DivRing x = {0} y ={0} z = {-5} r = {2}/>
+                <DivRing x = {0} y ={0} z = {5} r = {2}/>
 
-            >
-                {/* h,  */}
-                <Tube args={[ path, 2, 4.5, 100, true ]}> {/* 바깥 면 */} 
-                    <meshBasicMaterial color = "rgb(39, 39, 39)" />
-                    <Edges
-                        scale={1.01}
-                        threshold={15}
-                        color = "rgb(214, 214, 214)"
-                    />
-                </Tube>
-                <Tube args={[ path, 2, 0.5, 100, true ]}> {/* 안쪽 면 */}
-                    <meshBasicMaterial color = "rgb(39, 39, 39)" />
-                    <Edges
-                        scale={1.01}
-                        threshold={15}
-                        color = "rgb(39, 39, 39)"
-                    />
-                </Tube>
-                <Torus
-                    args={[ 1.0, 0.5, 2, 100 ]}
-                    rotation={[Math.PI / 2, 0, 0]}
-                    position={[0, 0.02, 0]}
-                    >
-                    <meshBasicMaterial color = "rgb(39, 39, 39)" />
-                </Torus>
-                <Torus
-                    args={[ 1.0, 0.5, 2, 100 ]}
-                    rotation={[Math.PI / 2, 0, 0]}
-                    position={[0, 0.48, 0]}
-                    >
-                    <meshBasicMaterial color = "rgb(39, 39, 39)" />
-                </Torus>
             </mesh>
     )
 }
@@ -74,11 +42,11 @@ function MainMesh({ test }) {
     const meshs = useRef();
 
     const rotateList = useMemo(
-      () => [ [210, 0], [210, 0], [210, 0], [210, 0], [210, 0], [210, 0], [210, 0], [90, 0],],
+      () => [ [10, 0], [20, 0], [30, 0], [40, 0], [50, 0], [60, 0], [70, 0], [90, 0],],
       []
     );
   
-    useFrame((state, delta) => {
+    useFrame((_, delta) => {
         if (!meshs.current) return;
     
         // 범위 보호
@@ -108,7 +76,7 @@ function MainMesh({ test }) {
 
     return(
         <mesh ref = {meshs}>
-            <M1Ring x = {0} y ={-1.5} z = {0.0} text = '링1'/>
+            <M1Ring x = {0} y ={0} z = {0}/>
         </mesh>
     )
 }
@@ -136,7 +104,8 @@ function Background() {
         <Canvas style={{ width: "100vw", height: "820px"}}
                                 camera={{
                                 position: [0, 0, 5],
-                            }}>
+                            }}
+                gl={{ toneMapping: THREE.NoToneMapping }}>
             <OrbitControls
                 enablePan = {false}
                 enableRotate = {true}
