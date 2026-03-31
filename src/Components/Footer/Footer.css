@@ -1,13 +1,13 @@
 .FT_Main {
     height: 90px;
-    width: 1500px;
+    width: 100vw;
 
     border-top: 1px solid #1A1A1A;
     display: flex;
 }
 .FT_LOGO {
     position: absolute;
-    left: none;
+    left: 10vw;
     top: 50%;
     transform: translate(0, -50%);
 
@@ -51,7 +51,7 @@
 }
 .FT_CopyRights {
     position: relative;
-
+    right: 10vw;
     font-size: 12px;
     font-weight: 300;
     font-family: 'Inter';
