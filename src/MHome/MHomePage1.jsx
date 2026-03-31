@@ -15,8 +15,8 @@ function MHomePage1() {
             <div className = 'MH_LineFade LF_Top'></div>
             <div className = 'MH_LineFade LF_Bottom'></div>
             <div className = 'MH_ZNINELOGO'>
-                <p className = 'ZL_Text MH_F'>ZNINE</p>
-                <div className = "MH_Trick"></div>
+                <p className = 'ZL_Text MH_F'>ZN</p>
+                <p className = 'ZL_Text MH_Trick'></p>
                 <p className = 'ZL_Text MH_B'>ZNINE</p>
             </div>
             <div className = 'MH_Subtitle'>
