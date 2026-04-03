@@ -21,13 +21,14 @@ function DivRactangle({x, y, z, r, isActive, parentRef}) {
         const s = THREE.MathUtils.damp(ref.current.scale.x, target, 4, delta);
 
         ref.current.rotation.y = newRotY;
-        ref.current.scale.set(s, s, s);
+        // ref.current.scale.set(s, s, s);
 
     });
+    
 
     return (
         <mesh ref ={ref} position = {[x, y, z]}  >
-            <boxGeometry args={[1, 1, 0.1]} />
+            <boxGeometry args={[viewport.width, viewport.height, 0.1]} />
             <meshBasicMaterial color = "#050505" />
             <Edges
                 scale = {1}
@@ -47,8 +48,8 @@ function MainMesh({ test }) {
     const meshs = useRef();
     const rX = 0;
     const rotateList = useMemo(
-      () => [ [rX, 0], [rX, 22.5], [rX, 67.5], [rX, 90], [rX, 112.5], [rX, 135], [rX, 157.5], [rX, 180], [rX, 202.5],
-                [rX, 225], [rX, 247.5], [rX, 270], [37, 292.5], [54, 315], [71, 337.5], [90, 337.5],],
+      () => [ [rX, 0], [rX, 0], [rX, 0], [rX, 0], [rX, 0], [rX, 0], [rX, 0], [rX, 0], [rX, 0],
+                [rX, 0], [rX, 0], [20, 0], [20, 0], [45, 0], [70, 0], [90, 0],],
       []
     );
   
@@ -99,7 +100,7 @@ function CameraController({step}) {
     const { camera } = useThree();
 
   useFrame((_, delta) => {
-        const isEnd = step >= 12;
+        const isEnd = step >= 13;
 
         const targetPos = isEnd ? [0, 0, 5] : [0, 0, 0];  
         camera.position.x = THREE.MathUtils.damp(camera.position.x, targetPos[0], 4, delta);

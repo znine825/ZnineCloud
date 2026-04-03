@@ -2,6 +2,7 @@ import './MHome.css'
 import MHomePage1 from'./MHomePage1.jsx'
 import MHomePage2 from'./MHomePage2.jsx'
 import MHomePage3 from'./MHomePage3.jsx'
+import MHomePage4 from'./MHomePage4/MHomePage4.jsx'
 import Header from './../Components/Header/Header.jsx'
 import Footer from './../Components/Footer/Footer.jsx'
 import Background from '../Components/Background/Background.jsx'
@@ -47,6 +48,7 @@ function MHome() {
             <div className = 'MH1_Page1'><MHomePage1 /></div>
             <div className = 'MH2_Page2'><MHomePage2 /></div>
             <div className = 'MH3_Page3'><MHomePage3 /></div>
+            <div className = 'MH3_Page4'><MHomePage4 /></div>
             <div className="cursor" ref = {cursorRef}>
                 <div></div>
             </div>
