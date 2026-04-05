@@ -8,7 +8,7 @@ body, #root {
 
     font-family: 'A2z';
 
-    background-color: #050505;
+    background-color: #252423;
 }
 
 html, body {
@@ -21,6 +21,10 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 }
 a {
     text-decoration: none;
+}
+a,
+a:hover {
+  cursor: none;
 }
 div, p, a {
     margin: 0;

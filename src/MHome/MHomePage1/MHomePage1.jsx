@@ -5,13 +5,7 @@ import { Link } from "react-router-dom";
 function MHomePage1() {
     return(
         <div>
-            <div className = 'MH_Back'>
-                <div className = 'MH_BackLine'></div>
-                <div className = 'MH_BackLine'></div>
-                <div className = 'MH_BackLine'></div>
-                <div className = 'MH_BackLine'></div>
-                <div className = 'MH_BackLine'></div>
-            </div>
+
             <div className = 'MH_LineFade LF_Top'></div>
             <div className = 'MH_LineFade LF_Bottom'></div>
             <div className = 'MH_ZNINELOGO'>

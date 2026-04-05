@@ -1,12 +1,19 @@
+.ML_Learn {
+    height: 300vh;
+    width: 100vh;
+}
 .ML_header {
-    position: fixed;
+    position: absolute;
     top: 0px;
     left: 50%;
 
     transform: translate(-50%, 0);
 }
 .ML_Background {
-    position: absolute;
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
 }
 .ML_header_text1 {
     position: absolute;

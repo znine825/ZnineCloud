@@ -1,7 +1,7 @@
 import './Background.css'
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Sphere, Circle, Ring, Torus, OrbitControls, Tube, Edges, DragControls } from "@react-three/drei";
+import { Sphere, Circle, Ring, Torus, OrbitControls, Tube, Edges, DragControls, Html, Text  } from "@react-three/drei";
 import * as THREE from 'three';
 import { AxesHelper } from "three";
 
@@ -15,13 +15,13 @@ function DivRactangle({x, y, z, r, isActive, parentRef}) {
         
         const parentRotY = parentRef.current.rotation.y;
         const targetRotY = isActive ? -parentRotY : r;
-        const target = isActive ? 5 : 1;
+        const target = isActive ? 8 : 1;
 
         const newRotY = THREE.MathUtils.damp(ref.current.rotation.y, targetRotY, 6, delta);
         const s = THREE.MathUtils.damp(ref.current.scale.x, target, 4, delta);
 
         ref.current.rotation.y = newRotY;
-        // ref.current.scale.set(s, s, s);
+        ref.current.scale.set(s, s, s);
 
     });
     
@@ -29,12 +29,21 @@ function DivRactangle({x, y, z, r, isActive, parentRef}) {
     return (
         <mesh ref ={ref} position = {[x, y, z]}  >
             <boxGeometry args={[viewport.width, viewport.height, 0.1]} />
-            <meshBasicMaterial color = "#050505" />
+            <meshBasicMaterial color = "#252423" />
             <Edges
                 scale = {1}
                 threshold = {15}
                 color = "#D9D9D9"
             />
+            <Text
+                position={[0, 0, 0.1]}
+                fontSize={0.3}
+                color="white"
+                anchorX="center"
+                anchorY="middle"
+                >
+                TEXT
+            </Text>
         </mesh>
     )
 }

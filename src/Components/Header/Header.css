@@ -1,10 +1,8 @@
 .BG_Header {
     position: relative;
     width: 100vw;
-    height: 48px;
+    height: 60px;
 
-    background-color: #101010;
-    border-bottom: solid 1px #1C1C1C;
 }
 
 .BG_Header > div {
@@ -15,7 +13,7 @@
 }
 .BG_LOGO {
     position: absolute;
-    top: 12px;
+    top: 20px;
     left: 10vw;
     display: flex;
 
